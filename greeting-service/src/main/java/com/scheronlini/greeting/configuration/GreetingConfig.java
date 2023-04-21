@@ -1,10 +1,12 @@
 package com.scheronlini.greeting.configuration;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.stereotype.Component;
 
 @Component
-@ConfigurationProperties("greeting-service")
+@RefreshScope
+@ConfigurationProperties("greeting")
 public class GreetingConfig {
 
     private String greeting;

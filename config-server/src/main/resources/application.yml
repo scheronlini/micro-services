@@ -2,7 +2,12 @@ server:
   port: 8888
 spring:
   application:
-    name: scheronlini-config-server
-  profiles:
-    active:
-      - native
+    name: config-server
+  cloud:
+   config:
+    Server:
+     git:
+      uri:  https://github.com/scheronlini/config-server
+      default-label: main
+      search-paths:
+      - 'greeting*'
